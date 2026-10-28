@@ -1,0 +1,28 @@
+{
+  "envelope": {
+    "version": "nome-creation/1",
+    "repository": "relocke/nomes",
+    "branch": "main",
+    "origin": "https://relocke.io",
+    "nonce": "1321b4ef-f109-4627-94a6-6e653f3afcab",
+    "expires": "2026-10-28T12:03:22.196Z",
+    "payload": {
+      "id": "57a92c20-afa2-481c-932b-b83ee8d1839a",
+      "base": "07203979a8861aeb05f917be3363fc18a0595485",
+      "draft": {
+        "slug": "beyond-the-false-dichotomy",
+        "title": "Beyond the False Dichotomy",
+        "purpose": "Maintain a repository of information that helps analyze financial-system exploits, especially visible patterns involving representation, groups and private ownership.",
+        "context": "This Nome supports the antediluvian sections of other fiscal systems by preserving evidence, distinctions and reasoning about how represented individuals, groups and ownership structures can create or expose systemic exploits. It treats proposed connections as analysis rather than established capability."
+      },
+      "identity": {
+        "chain": "vaulta",
+        "account": "account.rloc",
+        "permission": "active"
+      }
+    }
+  },
+  "digest": "f37ee710865fe836ebd1295018bac41df29c82eef8af432ff9b60b71f8bdb809",
+  "publicKey": "PUB_WA_MW7VD1ni3kJfrafuaXaa4RZU2pj7xm4KtLu8AMzWpi3eXh6AMycqdoeDQz9x4gAjKx",
+  "signature": "SIG_WA_3g972iRNavPRR2hztvXUCwY9qZG5dK3pwAzo2U2yYF1EtQVQ3NwWKM1MPYJGj1fHUJG5tekzXH3MbtpBJkbHiorVbPcub28JfbxbrcZerWRpogsjX9H2SCktWFHgmTQQ93xqBYjcgAC4aLHGgypT74WSeCpoUcpP7QWNdM74Cpio2GXtMaZ3TmKhNxkJf16zAM6fmZWUCzT9xcgAjwnrBGGv9NRFj9m7xXyG2rUmjuLcyowgZTsdDRcUjoFeU2uUcpwe8THj1SkRwGNbVbZG4NHU3T4jrBpyAtPTn6AxFgHByregKHhJ3X1CVbt9CuDYjd6EX9YQ"
+}

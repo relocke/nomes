@@ -1,0 +1,62 @@
+{
+  "$schema": "https://relocke.io/nome.schema.json",
+  "format": "relocke-nome/1",
+  "id": "57a92c20-afa2-481c-932b-b83ee8d1839a",
+  "title": "Beyond the False Dichotomy",
+  "authority": {
+    "version": 1,
+    "maintainers": [
+      {
+        "chain": "vaulta",
+        "account": "account.rloc",
+        "permission": "active"
+      }
+    ]
+  },
+  "discovery": {
+    "description": "Maintain a repository of information that helps analyze financial-system exploits, especially visible patterns involving representation, groups and private ownership.",
+    "indexing": {
+      "allowSearchIndexing": true,
+      "allowAgentDiscovery": true,
+      "canonicalUrl": "https://relocke.io/nomes/beyond-the-false-dichotomy"
+    },
+    "keywords": [],
+    "language": "en"
+  },
+  "mission": {
+    "objective": "Maintain a repository of information that helps analyze financial-system exploits, especially visible patterns involving representation, groups and private ownership.",
+    "successCriteria": [],
+    "constraints": [],
+    "failureConditions": []
+  },
+  "repository": {
+    "url": "https://github.com/relocke/nomes",
+    "branch": "main",
+    "directory": "nomes/beyond-the-false-dichotomy",
+    "publication": "reviewed_direct"
+  },
+  "files": [
+    "README.md",
+    "CONTEXT.md"
+  ],
+  "build": {
+    "chain": null,
+    "contractName": "",
+    "entryPoint": "",
+    "defines": []
+  },
+  "supportedChains": [
+    "vaulta"
+  ],
+  "targets": [],
+  "defaultTarget": null,
+  "structure": [],
+  "arguments": [],
+  "sideEffects": [],
+  "criteria": [],
+  "antediluvian": null,
+  "recognition": {
+    "kind": "nome",
+    "assessment": null
+  }
+}
