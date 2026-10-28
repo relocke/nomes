@@ -32,9 +32,13 @@ folder access can download and import the standard project backup.
 
 ## Boundaries
 
-This is a documentation and governance draft with no chain, account, contract or
-deployment target. Forge can discuss and edit its files; its contract build
-readiness checks will remain incomplete. Do not add dummy source or choose a
+This Nome is governed by `rloc@active` on Vaulta. Acceptance and future
+permission changes require a valid passkey signature satisfying that account
+permission and the existing GitHub validation rules.
+
+This remains a documentation and governance project with no contract or deployment
+target. Forge can discuss and edit its files; its contract build readiness checks
+will remain incomplete. Do not add dummy source or choose a
 chain just to satisfy a build check.
 
 Referenced tools, models and documents are not automatically installed or loaded.

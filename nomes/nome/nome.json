@@ -3,6 +3,16 @@
   "format": "relocke-nome/1",
   "id": "21818b69-95b3-5bca-9447-4b19efdd140d",
   "title": "Nome",
+  "authority": {
+    "version": 1,
+    "maintainers": [
+      {
+        "chain": "vaulta",
+        "account": "rloc",
+        "permission": "active"
+      }
+    ]
+  },
   "discovery": {
     "description": "A shared framework for describing systems, their purpose, governance and reviewed context for people and agents.",
     "keywords": [
@@ -82,7 +92,9 @@
     "entryPoint": "",
     "defines": []
   },
-  "supportedChains": [],
+  "supportedChains": [
+    "vaulta"
+  ],
   "targets": [],
   "defaultTarget": null,
   "structure": [
