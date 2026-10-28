@@ -1,0 +1,222 @@
+{
+  "$schema": "https://relocke.io/nome.schema.json",
+  "format": "relocke-nome/1",
+  "id": "21818b69-95b3-5bca-9447-4b19efdd140d",
+  "title": "Nome",
+  "discovery": {
+    "description": "A shared framework for describing systems, their purpose, governance and reviewed context for people and agents.",
+    "keywords": [
+      "nome",
+      "governance",
+      "reasoning",
+      "manifest",
+      "skills",
+      "harnesses",
+      "runtimes",
+      "agentic tools"
+    ],
+    "aliases": [
+      "Nome development"
+    ],
+    "language": "en",
+    "longDescription": "Nome develops a portable project model for identity, mission, governance, evidence and relationships. It provides structured discovery metadata and agent orientation so people and tools can understand a project without mistaking references for installed capabilities.",
+    "topics": [
+      "nome",
+      "agent-context",
+      "governance",
+      "knowledge-architecture",
+      "mcp"
+    ],
+    "audience": [
+      "people",
+      "agents",
+      "developers",
+      "MCP clients"
+    ],
+    "status": "proposed",
+    "indexing": {
+      "allowSearchIndexing": true,
+      "allowAgentDiscovery": true,
+      "canonicalUrl": "https://relocke.io/nomes/nome"
+    }
+  },
+  "mission": {
+    "objective": "Develop and maintain the Nome model itself: a shared, locally editable framework for describing systems, their purpose, governance, reasoning and agentic capabilities.",
+    "successCriteria": [
+      "The manifest validates and every listed local document exists.",
+      "People and agents can locate the standard, schema, maintained skills, runtime boundaries and review workflow.",
+      "Conversations produce traceable proposals that can be reviewed and saved locally.",
+      "People, search engines and agents can read consistent identity, purpose, discovery preferences and revision-aware context without inferred permissions."
+    ],
+    "constraints": [
+      "Use relocke-nome/1 and the existing Forge import, conversation and local save workflow.",
+      "References are context; changes to protected infrastructure require explicit owner authorization.",
+      "Model output is a proposal, not accepted governance, ownership or operational authority."
+    ],
+    "failureConditions": [
+      "Summaries lose evidence or provenance needed to revisit a decision.",
+      "References are treated as tool grants or executable instructions.",
+      "Drafts are silently published, replace another project or erase dissent."
+    ]
+  },
+  "responsibility": null,
+  "license": null,
+  "repository": {
+    "url": "https://github.com/relocke/nomes",
+    "branch": "main",
+    "directory": "nomes/nome",
+    "publication": "portable_only"
+  },
+  "files": [
+    "README.md",
+    "CONTEXT.md",
+    "REFERENCES.md",
+    "CONVERSATION.md",
+    "ROADMAP.md",
+    "AGENTS.md",
+    "DISCOVERY.md"
+  ],
+  "build": {
+    "chain": null,
+    "contractName": "",
+    "entryPoint": "",
+    "defines": []
+  },
+  "supportedChains": [],
+  "targets": [],
+  "defaultTarget": null,
+  "structure": [
+    {
+      "type": "node",
+      "nodeId": "cecd2209-c6aa-5433-a95b-c22365fc3019",
+      "kind": "goal",
+      "title": "Purpose",
+      "description": "Develop the Nome model through clear goals, structured reasoning and reviewed changes.",
+      "parent": null,
+      "links": [],
+      "evidence": [],
+      "targets": []
+    },
+    {
+      "type": "node",
+      "nodeId": "ff994b0a-b44a-515f-80fb-71c3ed54d672",
+      "kind": "rule",
+      "title": "Conversation and evidence",
+      "description": "Develop the Nome through conversation. Propose updates to CONTEXT.md and nome.json for review, separating goals, hypotheses, evidence and decisions while preserving unresolved questions.",
+      "parent": "cecd2209-c6aa-5433-a95b-c22365fc3019",
+      "links": [],
+      "evidence": [],
+      "targets": []
+    },
+    {
+      "type": "node",
+      "nodeId": "2d2d3e0e-0453-53b0-ade3-065a2e4f5f2c",
+      "kind": "rule",
+      "title": "References and capabilities",
+      "description": "Describe maintained skills, harnesses, runtimes and MCP resources through REFERENCES.md. References are context, not permission or installed capabilities.",
+      "parent": "cecd2209-c6aa-5433-a95b-c22365fc3019",
+      "links": [],
+      "evidence": [],
+      "targets": []
+    },
+    {
+      "type": "node",
+      "nodeId": "df9234b9-723b-5d86-b197-23b40d3efac0",
+      "kind": "roadmap",
+      "title": "Discovery and interoperability",
+      "description": "Maintain reusable discovery metadata, agent orientation and revision-pinned relationship declarations. Render page metadata from the manifest; keep automatic hierarchy traversal and MCP resource publication as separate implementation proposals.",
+      "parent": "cecd2209-c6aa-5433-a95b-c22365fc3019",
+      "links": [],
+      "evidence": [],
+      "targets": []
+    },
+    {
+      "type": "node",
+      "nodeId": "b0b949ca-a6c4-4c09-817f-e83eedc97368",
+      "kind": "goal",
+      "title": "Describe system interactions",
+      "description": "Define how this Nome relates to people, agents and systems: purpose, inputs, outputs, rules, permissions and failure conditions. Keep proposed connections distinct from implemented capabilities.",
+      "parent": "cecd2209-c6aa-5433-a95b-c22365fc3019",
+      "links": [],
+      "evidence": [],
+      "targets": []
+    }
+  ],
+  "arguments": [],
+  "sideEffects": [],
+  "criteria": [
+    {
+      "id": "df2edf6a-61c1-585c-9bcc-6de354689d64",
+      "statement": "Preserve compatible manifest structure and stable identity.",
+      "required": true
+    },
+    {
+      "id": "e08a9e45-651d-5811-951c-cb325e18a076",
+      "statement": "Review changes against evidence and record unresolved disagreements.",
+      "required": true
+    },
+    {
+      "id": "fdd7b1b2-4d24-54eb-be3c-283f6f16d6a0",
+      "statement": "Keep public context separate from secrets and operational authority.",
+      "required": true
+    }
+  ],
+  "antediluvian": null,
+  "recognition": {
+    "kind": "nome",
+    "assessment": null
+  },
+  "context": {
+    "skills": [
+      {
+        "title": "Nome reasoning and review",
+        "url": "https://github.com/relocke/app/blob/master/skills/nomos/SKILL.md"
+      }
+    ],
+    "harnesses": [
+      {
+        "title": "ReLocke agent harness",
+        "url": "https://github.com/relocke/app/blob/master/lib/agent/harnesses.ts"
+      }
+    ],
+    "runtimes": [
+      {
+        "title": "ReLocke runtime policy",
+        "url": "https://github.com/relocke/app/blob/master/lib/agent/runtime-policy.ts"
+      }
+    ],
+    "records": "discussion"
+  },
+  "agentContext": {
+    "orientationFile": "AGENTS.md",
+    "readOrder": [
+      "nome.json",
+      "AGENTS.md",
+      "README.md",
+      "CONTEXT.md",
+      "DISCOVERY.md",
+      "REFERENCES.md",
+      "CONVERSATION.md",
+      "ROADMAP.md"
+    ],
+    "purpose": "Explain and develop the Nome model, including reusable discovery metadata and reviewed project context.",
+    "allowedUses": [
+      "Read the listed project context.",
+      "Use cited references for orientation.",
+      "Propose changes for review."
+    ],
+    "prohibitedInferences": [
+      "References do not grant permissions.",
+      "Proposals are not accepted governance.",
+      "A listed tool is not necessarily installed or available.",
+      "A signature establishes attribution, not truth."
+    ],
+    "evidencePolicy": {
+      "requireSourceRevision": true,
+      "distinguishProposedFromAccepted": true,
+      "preserveDisagreements": true,
+      "recordMissingEvidence": true
+    }
+  },
+  "relationships": []
+}
