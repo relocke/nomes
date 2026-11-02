@@ -30,6 +30,20 @@ folder**. Review proposed file changes, then use **Save to folder** to write the
 back. Browser storage alone does not update your filesystem. Browsers without
 folder access can download and import the standard project backup.
 
+## Proposed reasoning and governance foundations
+
+The methodology proposed in [Shared context](CONTEXT.md#reasoning-and-governance-methodology)
+separates stable constraints, evidence and assumptions, and decisions among
+competing values. It treats scoped foundational commitments as binding within
+an explicitly pinned version: saying that a rule or institution is socially
+constructed is not, by itself, grounds for an agent to disregard that commitment.
+Challenges remain reviewable; changes follow the declared governance and version
+policy rather than silently changing the same version. This is not a claim that
+all laws are universally true or immutable, or that declaring a rule proves legal
+compliance. See [Conversation and review](CONVERSATION.md#review-a-reasoning-or-governance-contribution)
+for contribution requirements. This methodology remains proposed until accepted
+under the current maintainer policy.
+
 ## Boundaries
 
 This Nome is governed by `rloc@active` on Vaulta. Acceptance and future

@@ -1,0 +1,37 @@
+{
+  "id": "a5b0870d6a8e2c03459a1a580593638c62dfe55fc3b3705a88e5a0c4b65543f9",
+  "head": "3aa9d16ad97da7dd9f21d998cdacaee5ab209fc9",
+  "identity": {
+    "chain": "vaulta",
+    "account": "rloc",
+    "permission": "active"
+  },
+  "outcome": "accepted",
+  "reason": "Maintainer approved this proposed change through the Nome chat.",
+  "reconsiderWhen": "New evidence or a subsequent proposal.",
+  "proof": {
+    "envelope": {
+      "version": "nome-contribution/1",
+      "purpose": "review",
+      "slug": "nome",
+      "origin": "https://relocke.io",
+      "nonce": "5e49c6b0-c112-4836-9082-554c9a451875",
+      "expires": "2026-11-02T07:41:44.658Z",
+      "payload": {
+        "id": "a5b0870d6a8e2c03459a1a580593638c62dfe55fc3b3705a88e5a0c4b65543f9",
+        "head": "3aa9d16ad97da7dd9f21d998cdacaee5ab209fc9",
+        "identity": {
+          "chain": "vaulta",
+          "account": "rloc",
+          "permission": "active"
+        },
+        "outcome": "accepted",
+        "reason": "Maintainer approved this proposed change through the Nome chat.",
+        "reconsiderWhen": "New evidence or a subsequent proposal."
+      }
+    },
+    "digest": "7f49f99334010dbfa05df8ba5d6822f362171c13ea831d0b0317792698563cf9",
+    "signature": "SIG_WA_2W3XN69eG9MAQHuGAK3EfPuJuStvgHXUvcHtHAKNz6mJhs1o6sg2ezRbR8Lr7KZwBS5CPbT9pvVVzViTozMUrS2iHzaynBvvDbcWtoodfVXbSsg9i9X7kQsVHsLGAvMDuftnnT693i4M3ngCPHDkhGggdPFqFMNeYwDsXt9YPyL4i5nebHyvgBACBxjNXTtTctTaUtVAqrgPZnqDPEuy46NoeA7ZNU2RA8moiTauBShQm9MqASBJDghbCJSA2HYvC73x85bScRreeph5r9KKzSfmaYUXF5s3p52NQasdmii27P3kYah38oDP1HfCSkEYUEGDM5aoEdj6xFh3sTqJxqxFeTVf8s54YDN7QyXkrd7zeo2fEBTsHR16NwqNydsvp2sqgNMYdWWS6nmifSjrSMfqEKyncaAyNSQW2fB4nXxK9hs2Jxq77RuWzTVRMBFyZyXWbmGUjhr6UhpdYqmvLhsJpUsGT",
+    "publicKey": "PUB_WA_MW7VD1ni3kJfrafuaXaa4RZU2pj7xm4KtLu8AMzWpi3eXh6AMycqdoeDQz9x4gAjKx"
+  }
+}

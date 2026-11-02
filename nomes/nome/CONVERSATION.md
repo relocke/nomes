@@ -18,6 +18,46 @@ replacement for maintained skills, runtime instructions or access controls.
 6. Review the proposed file changes before accepting them. Use the existing local
    save controls to persist accepted changes. Publication is a separate action.
 
+## Review a reasoning or governance contribution
+
+Apply the three-layer methodology in `CONTEXT.md`. Each contribution should
+identify:
+
+- The goal and problem addressed, and the affected scope or dependencies.
+- Applicable rules or invariants by stable identifier and revision, their
+  authority, and any proposed change to a binding constraint.
+- Factual claims, evidence, assumptions, attributed experiences and preferences,
+  and chosen values, kept distinct with their sources and uncertainties.
+- Affected stakeholders, expected benefits and burdens, missing perspectives,
+  alternatives, conflicts and explained trade-offs.
+- The decision procedure, authorized decision maker, participation and appeal
+  process, objections, feedback and conditions for revision.
+- Tests or review criteria, expected outcomes, actual results when available,
+  limitations and what evidence would challenge the proposal. Mark tests that
+  have not been run and distinguish conceptual examples from execution evidence.
+
+For example, two people reporting different needs is not by itself a factual
+contradiction; choosing between competing needs requires an explicit decision
+process. If an assumption fails, trace its dependent conclusions and reassess
+them before claiming either that nothing changes or that the whole system fails.
+A consistent argument with unsupported premises is not established fact, and a
+majority preference is not proof of factual truth or unanimous agreement.
+
+For foundational commitments, apply `FOUNDATION-VERSION-001`: identify the exact
+version pin and scope, distinguish a challenge to factual support from a proposed
+change to a governing commitment, and name the applicable review and version
+policy. Social construction alone is not grounds to disregard a commitment.
+Record conflicts openly; do not present a silently changed foundation as the
+same version. Check both that contrary evidence can be reported and that agents
+cannot remove a binding premise without the declared review process.
+
+Keep proposals, published contributions and accepted decisions distinct. Summarize
+only the content selected for publication, without copying private conversation.
+Publication through ReLocke requires review and passkey authorization; acceptance
+requires the currently accepted maintainer policy and successful GitHub validation.
+The methodology does not replace those checks or authorize direct repository
+publication, signing, deployment or changes to harness machinery.
+
 ## Keep the active conversation focused
 
 Summarize repetition and move tangents into clearly labelled context notes when
