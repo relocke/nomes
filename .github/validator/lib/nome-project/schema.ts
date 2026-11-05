@@ -8,7 +8,7 @@ export const digestSchema = z.string().regex(/^[a-f0-9]{64}$/);
 export { nomeIdentitySchema as identitySchema } from "../nomos/authority.ts";
 const identitySchema = nomeIdentitySchema;
 export const editSchema = z.object({
-  path: z.union([z.literal("nome.json"), nomeDocumentPathSchema]),
+  path: z.union([z.literal("nome.json"), z.literal("nome.skills.json"), nomeDocumentPathSchema]),
   content: z.string().max(120_000),
 }).strict();
 export const contributionSchema = z.object({
