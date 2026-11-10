@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { sharedReasoningSchema, reasoningPolicySchema, reasoningHarnessSchema, validateReasoning } from "./reasoning.ts";
 import { nomeAuthoritySchema } from "./authority.ts";
 import { nodeSchema, targetSchema } from "./schema.ts";
 import { compileProjectSchema } from "../../features/contract-deployment/lib/schema.ts";
@@ -117,6 +118,9 @@ export const nomeManifestSchema = z.object({
   ownership: declaredText(4000).optional().describe("Declared ownership; does not grant maintainer authority or verify legal rights."),
   changeProcess: declaredText(4000).optional(),
   faq: z.array(nomeFaqSchema).max(100).optional(),
+  reasoning: sharedReasoningSchema.optional(),
+  reasoningPolicy: reasoningPolicySchema.optional(),
+  reasoningHarness: reasoningHarnessSchema.optional(),
   mission: z.object({ objective: z.string().max(8000), problem: text.optional(), axioms: z.array(text).max(20).optional(), limitations: z.array(text).max(20).optional(), successCriteria: z.array(text).max(20), constraints: z.array(text).max(20), failureConditions: z.array(text).max(20) }).strict(),
   responsibility: nomeResponsibilitySchema.nullable().optional(),
   license: nomeLicenseSchema.nullable().optional(),
@@ -134,6 +138,7 @@ export const nomeManifestSchema = z.object({
   antediluvian: z.object({ projectId: identifier, revisionId: hash, recordsPath: z.literal("nomos/exchange/antediluvian/records.json").optional() }).strict().nullable(),
   recognition: z.object({ kind: z.literal("nome"), assessment: z.object({ projectId: identifier, revisionId: hash, recordHash: hash }).strict().nullable() }).strict(),
 }).strict().superRefine((manifest, ctx) => {
+  validateReasoning(manifest, ctx);
   const unique = (values: string[], label: string) => { if (new Set(values).size !== values.length) ctx.addIssue({ code: "custom", message: `${label} must be unique.` }); };
   unique(manifest.files.map(path => path.toLowerCase()), "File paths"); unique(manifest.supportedChains, "Supported chains");
   unique(manifest.targets.map(t => t.id), "Target IDs"); unique(manifest.structure.map(n => n.nodeId), "Structure node IDs");
@@ -154,9 +159,10 @@ export const nomeManifestSchema = z.object({
   }
   const targets = new Set(manifest.targets.map(t => t.id)); const nodes = new Map(manifest.structure.map(n => [n.nodeId, n]));
   unique((manifest.faq ?? []).map(item => item.id), "FAQ IDs");
+  const reasoningArguments = new Set([ ...manifest.arguments.map(argument => argument.id), ...(manifest.reasoning?.nodes ?? []).filter(node => node.kind === "argument" || node.kind === "objection").map(node => node.id) ]);
   for (const item of manifest.faq ?? []) {
     unique(item.arguments, "FAQ argument references");
-    if (item.arguments.some(id => !manifest.arguments.some(argument => argument.id === id))) ctx.addIssue({ code: "custom", path: ["faq"], message: "FAQ arguments must reference declared arguments." });
+    if (item.arguments.some(id => !reasoningArguments.has(id))) ctx.addIssue({ code: "custom", path: ["faq"], message: "FAQ arguments must reference declared arguments." });
   }
   if (manifest.defaultTarget && !targets.has(manifest.defaultTarget)) ctx.addIssue({ code: "custom", message: "Default target must reference a declared target." });
   for (const [path, reference] of [

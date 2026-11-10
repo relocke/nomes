@@ -27,7 +27,7 @@ export function validateEdits(manifest: NomeManifest, documents: Array<{ filenam
     if (edit.path !== "nome.json" && (!next.files.includes(edit.path) || edit.path.startsWith("discussion/"))) throw new NomeError("Edits must be declared project documents, separate from discussion records.");
   }
   if (next.files.some(path => !files.has(path))) throw new NomeError("Every declared project file must exist after the proposal.");
-  loadNomeArchitecture([...files].map(([filename, source]) => ({ filename, source })), next.files);
+  loadNomeArchitecture([...files].map(([filename, source]) => ({ filename, source })), next.files, next.reasoningHarness);
   return next;
 }
 export function selectSources(sources: Source[], question: string, limit = 8) {

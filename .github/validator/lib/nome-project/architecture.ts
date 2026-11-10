@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { ReasoningHarness } from "../nomos/reasoning.ts";
 
 export const NOME_SKILLS_FILE = "nome.skills.json";
 export const NOME_SKILLS_SCHEMA = "https://relocke.io/nomes/schema/skills-1.0.json";
@@ -89,12 +90,18 @@ export const serializeNomeSkills = (spec: NomeSkills) => {
   return source;
 };
 
-export function loadNomeArchitecture(files: Array<{ filename: string; source: string }>, declared: string[]): NomeSkills | null {
-  if (!declared.includes(NOME_SKILLS_FILE)) return null;
+export function loadNomeArchitecture(files: Array<{ filename: string; source: string }>, declared: string[], reasoningHarness?: ReasoningHarness): NomeSkills | null {
+  if (!declared.includes(NOME_SKILLS_FILE)) {
+    if (reasoningHarness?.functions.length) throw new Error("Reasoning functions require an agent catalogue.");
+    return null;
+  }
   const source = files.find(file => file.filename === NOME_SKILLS_FILE)?.source;
   if (source === undefined) throw new Error("Declared Nome architecture is missing.");
   const spec = parseNomeSkills(source);
   for (const skill of spec.skills ?? []) if (skill.instructionsFile && (!declared.includes(skill.instructionsFile) || !files.some(file => file.filename === skill.instructionsFile))) throw new Error(`Missing declared instructions for ${skill.id}.`);
+  for (const fn of reasoningHarness?.functions ?? []) for (const agent of fn.agents) {
+    if (!spec.agents?.some(item => item.id === agent)) throw new Error(`Unknown reasoning agent: ${agent}`);
+  }
   return spec;
 }
 

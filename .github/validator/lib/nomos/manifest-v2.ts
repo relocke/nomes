@@ -12,12 +12,14 @@ const groupedNodes = (kind: "goal" | "rule" | "component") => z.array(nodes).max
 const nomeV2Shape = z.object({
   $schema: z.literal("https://relocke.io/nome.schema.json").optional(),
   format: z.literal("relocke-nome/2"),
+  reasoning: fields.reasoning,
   identity: z.object({
     id: fields.id, name: fields.title, location: fields.repository,
     discovery: fields.discovery.unwrap().omit({ problem: true, approach: true }).optional(),
   }).strict(),
   mission: fields.mission.extend({ goals: groupedNodes("goal") }).strict(),
   governance: z.object({
+    reasoningPolicy: fields.reasoningPolicy,
     authority: fields.authority, responsibility: fields.responsibility, license: fields.license,
     ownership: fields.ownership, beneficiaries: fields.beneficiaries, changeProcess: fields.changeProcess,
     rules: groupedNodes("rule"), relationships: fields.governanceRelationships,
@@ -25,6 +27,7 @@ const nomeV2Shape = z.object({
     antediluvian: fields.antediluvian, criteria: fields.criteria, recognition: fields.recognition,
   }).strict(),
   architecture: z.object({
+    reasoningHarness: fields.reasoningHarness,
     approach: z.string().min(1).max(2000).regex(/\S/).optional(),
     build: fields.build, supportedChains: fields.supportedChains, targets: fields.targets,
     defaultTarget: fields.defaultTarget, components: groupedNodes("component"),
@@ -47,6 +50,7 @@ export function projectV2(document: NomeV2): LegacyManifest {
   const { identity, governance, architecture } = document;
   const projected: LegacyManifest = {
     ...(document.$schema ? { $schema: document.$schema } : {}),
+    reasoning: document.reasoning, reasoningPolicy: governance.reasoningPolicy, reasoningHarness: architecture.reasoningHarness,
     format: "relocke-nome/1", id: identity.id, title: identity.name, repository: identity.location,
     ...(identity.discovery ? { discovery: { ...identity.discovery, ...(mission.problem ? { problem: mission.problem } : {}), ...(architecture.approach ? { approach: architecture.approach } : {}) } } : {}), mission,
     authority: governance.authority, responsibility: governance.responsibility, license: governance.license,
@@ -71,9 +75,11 @@ export function organizeNome(manifest: LegacyManifest): NomeV2 {
   const { problem, approach, ...discovery } = value.discovery ?? {};
   return nomeV2Schema.parse({
     $schema: "https://relocke.io/nome.schema.json", format: "relocke-nome/2",
+    ...(value.reasoning ? { reasoning: value.reasoning } : {}),
     identity: { id: value.id, name: value.title, location: value.repository, discovery: value.discovery ? discovery : undefined },
     mission: { ...value.mission, ...(problem ? { problem } : {}), goals: value.structure.filter(node => node.kind === "goal") },
     governance: {
+      reasoningPolicy: value.reasoningPolicy,
       authority: value.authority, responsibility: value.responsibility, license: value.license,
       ownership: value.ownership, beneficiaries: value.beneficiaries, changeProcess: value.changeProcess,
       rules: value.structure.filter(node => node.kind === "rule"), relationships: value.governanceRelationships,
@@ -81,6 +87,7 @@ export function organizeNome(manifest: LegacyManifest): NomeV2 {
       criteria: value.criteria, recognition: value.recognition,
     },
     architecture: {
+      reasoningHarness: value.reasoningHarness,
       approach: value.architectureApproach ?? approach,
       build: value.build, supportedChains: value.supportedChains, targets: value.targets,
       defaultTarget: value.defaultTarget, files: value.files, context: value.context,
